@@ -1,4 +1,4 @@
-package com.smriti.emailservice.entities;
+package com.smriti.adminservice.entities;
 
 import lombok.Getter;
 import lombok.Setter;
