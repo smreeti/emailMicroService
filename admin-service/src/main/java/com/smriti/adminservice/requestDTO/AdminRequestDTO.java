@@ -7,7 +7,7 @@ import lombok.Setter;
 @Setter
 public class AdminRequestDTO {
 
-    private String user;
+    private String username;
 
     private String emailAddress;
 
