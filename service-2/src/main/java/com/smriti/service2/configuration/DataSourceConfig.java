@@ -1,4 +1,4 @@
-package com.f1soft.admin.configuration;
+package com.smriti.service2.configuration;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -20,12 +20,12 @@ import java.util.Properties;
 
 @Configuration
 @EnableTransactionManagement
-@ComponentScan("com.f1soft.admin")
+@ComponentScan("com.smriti.service2")
 @PropertySource(value = {"classpath:application.properties"})
-@EnableJpaRepositories(basePackages = "com.f1soft.admin.repository",
+@EnableJpaRepositories(basePackages = "com.smriti.service2.repository",
         entityManagerFactoryRef = "entityManagerFactoryBean")
 @EnableSpringDataWebSupport
-public class JpaConfiguration {
+public class DataSourceConfig {
     @Autowired
     private Environment environment;
 
@@ -33,7 +33,7 @@ public class JpaConfiguration {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(){
         LocalContainerEntityManagerFactoryBean emfb = new LocalContainerEntityManagerFactoryBean();
         emfb.setDataSource(dataSource());
-        emfb.setPackagesToScan(new String[]{"com.f1soft.admin.model"});
+        emfb.setPackagesToScan(new String[]{"com.smriti.service2.entities"});
         emfb.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         emfb.setJpaProperties(hibernateProperties());
         return emfb;

@@ -33,7 +33,7 @@ public class DataSourceConfig {
     public LocalContainerEntityManagerFactoryBean entityManagerFactoryBean(){
         LocalContainerEntityManagerFactoryBean emfb = new LocalContainerEntityManagerFactoryBean();
         emfb.setDataSource(dataSource());
-        emfb.setPackagesToScan(new String[]{"com.smriti.service1.model"});
+        emfb.setPackagesToScan(new String[]{"com.smriti.service1.entities"});
         emfb.setJpaVendorAdapter(new HibernateJpaVendorAdapter());
         emfb.setJpaProperties(hibernateProperties());
         return emfb;

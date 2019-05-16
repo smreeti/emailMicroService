@@ -1,4 +1,4 @@
-package com.f1soft.admin.configuration;
+package com.smriti.service2.configuration;
 
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -8,7 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurerAdapter
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "com.f1soft.admin.controller")
+@ComponentScan(basePackages = "com.smriti.service2.controller")
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
     @Override

@@ -1,10 +1,10 @@
-package com.f1soft.admin.configuration;
+package com.smriti.service2.configuration;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.web.servlet.support.AbstractAnnotationConfigDispatcherServletInitializer;
 
 @Configuration
-public class ApplicationInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
+public class WebAppInitializer extends AbstractAnnotationConfigDispatcherServletInitializer{
     protected Class<?>[] getRootConfigClasses() {
         return new Class[]{RootConfig.class};
     }
