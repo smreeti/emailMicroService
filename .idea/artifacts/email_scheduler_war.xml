@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="email-scheduler:war">
+    <output-path>$PROJECT_DIR$/emailMicroService/email-scheduler/target</output-path>
+    <root id="archive" name="email-scheduler-0.0.1-SNAPSHOT.war">
+      <element id="artifact" artifact-name="email-scheduler:war exploded" />
+    </root>
+  </artifact>
+</component>
