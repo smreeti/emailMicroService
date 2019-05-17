@@ -4,6 +4,7 @@ import com.smriti.adminservice.entities.Admin;
 import com.smriti.adminservice.repository.AdminRepository;
 import com.smriti.adminservice.requestDTO.AdminRequestDTO;
 import com.smriti.adminservice.responseDTO.AdminResponseDTO;
+import com.smriti.adminservice.responseDTO.ResponseDTO;
 import com.smriti.adminservice.service.AdminService;
 import com.smriti.adminservice.utility.AdminQueryCreator;
 import com.smriti.adminservice.utility.AdminUtils;
@@ -34,12 +35,17 @@ public class AdminServiceImpl implements AdminService {
     }
 
     @Override
-    public List<AdminResponseDTO> adminsToSendEmails() {
+    public ResponseDTO adminsToSendEmails() {
 
         List<Object[]> results = entityManager.createNativeQuery(
                 AdminQueryCreator.createQueryToFetchAdminsToSendEmail.get()).getResultList();
 
-        return results.stream().map(AdminUtils.convertToResponse).collect(Collectors.toList());
+        List<AdminResponseDTO> responseDTOS = results.stream().map(AdminUtils.convertToResponse)
+                .collect(Collectors.toList());
 
+        ResponseDTO responseDTO = new ResponseDTO();
+        responseDTO.setAdminResponseDTOS(responseDTOS);
+
+        return responseDTO;
     }
 }

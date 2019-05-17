@@ -1,6 +1,6 @@
 package com.smriti.emailservice.service;
 
-import com.smriti.emailservice.entities.Admin;
+import com.smriti.emailservice.responseDTO.AdminResponseDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.mail.MailException;
 import org.springframework.mail.SimpleMailMessage;
@@ -17,12 +17,12 @@ public class EmailService {
         this.javaMailSender = javaMailSender;
     }
 
-    public void sendEmail(Admin admin)throws MailException {
+    public void sendEmail(AdminResponseDTO admin)throws MailException {
         SimpleMailMessage mailMessage = new SimpleMailMessage();
         mailMessage.setTo(admin.getEmailAddress());
-        mailMessage.setFrom("mool.smreeti@gmail.com");
-        mailMessage.setSubject("Thank you for registering on Instagram " +admin.getUsername()+"....");
-        mailMessage.setText(" Dear " +admin.getEmailAddress() +" activate your account by using this password:");
+        mailMessage.setFrom("etest4367@gmail.com");
+        mailMessage.setSubject("Email sent...");
+        mailMessage.setText(" Dear " +admin.getEmailAddress() +" email has been sent to you..");
         javaMailSender.send(mailMessage);
     }
 }

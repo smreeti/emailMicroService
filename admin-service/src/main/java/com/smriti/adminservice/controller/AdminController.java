@@ -3,6 +3,7 @@ package com.smriti.adminservice.controller;
 import com.smriti.adminservice.entities.Admin;
 import com.smriti.adminservice.requestDTO.AdminRequestDTO;
 import com.smriti.adminservice.responseDTO.AdminResponseDTO;
+import com.smriti.adminservice.responseDTO.ResponseDTO;
 import com.smriti.adminservice.responseDTO.SuccessResponseDTO;
 import com.smriti.adminservice.service.AdminService;
 import org.springframework.http.HttpStatus;
@@ -28,7 +29,7 @@ public class AdminController {
     }
 
     @GetMapping("/admins")
-    public ResponseEntity<List<AdminResponseDTO>> getAdminsToSendEmail() {
+    public ResponseEntity<ResponseDTO> getAdminsToSendEmail() {
         return new ResponseEntity<>(adminService.adminsToSendEmails(), HttpStatus.OK);
     }
 }
