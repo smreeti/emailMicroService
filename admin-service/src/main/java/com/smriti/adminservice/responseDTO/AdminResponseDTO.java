@@ -10,4 +10,6 @@ import lombok.*;
 public class AdminResponseDTO {
 
     private String emailAddress;
+
+    private Long id;
 }

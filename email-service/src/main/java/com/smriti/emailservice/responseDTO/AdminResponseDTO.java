@@ -6,5 +6,7 @@ import lombok.*;
 @Setter
 public class AdminResponseDTO {
 
+    private Long id;
+
     private String emailAddress;
 }

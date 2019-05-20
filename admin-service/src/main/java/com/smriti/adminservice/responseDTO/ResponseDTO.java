@@ -9,4 +9,6 @@ import java.util.List;
 @Setter
 public class ResponseDTO {
     private List<AdminResponseDTO> adminResponseDTOS;
+
+    private String message;
 }
